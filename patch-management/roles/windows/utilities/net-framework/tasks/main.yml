@@ -10,7 +10,5 @@
 - name: Install net-framework
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/net-framework/ndp48-x86-x64-allos-enu.exe'
-    url_username: 'admin'
-    url_password: 'MECO_Admin@2023'
     state: present
     arguments: /passive /norestart /log C:\logs\net-framework-4.8.log

@@ -10,7 +10,5 @@
 - name: Install SoapUI
   win_package: 
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/soapui/SoapUI-x64-5.7.2.exe'
-    url_username: 'admin'
-    url_password: 'MECO_Admin@2023'
     state: present
     arguments: -q -overwrite -dir D:\3rdparty\SoapUI

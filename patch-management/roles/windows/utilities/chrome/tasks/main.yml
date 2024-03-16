@@ -10,7 +10,5 @@
 - name: Install chrome
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/chrome/googlechromestandaloneenterprise64.msi'
-    url_username: 'admin'
-    url_password: 'MECO_Admin@2023'
     state: present
     arguments: /qn
