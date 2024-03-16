@@ -1,0 +1,11 @@
+---
+# Main file for Visual Studio Installation
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Copy Visual Studio
+  win_copy:
+    src: '/opt/updates/'
+    dest: 'C:\\temp\\mpam-fe.exe'
+
+- name: Install windefender definition
+  win_shell: 'C:\\temp\\mpam-fe.exe'

@@ -1,0 +1,5 @@
+ansible_user: 'administrator@OT.PDS'
+ansible_password: 'Passw0rd!'
+ansible_port: 5985
+ansible_connection: winrm
+ansible_winrm_transport: kerberos

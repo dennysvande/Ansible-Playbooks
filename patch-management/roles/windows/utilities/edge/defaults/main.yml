@@ -1,0 +1,10 @@
+---
+# defaults file for roles/windows/firefox
+# Here is to specific vars for the role.
+
+app:
+  name: firefox
+  install_path: 'C:\Program Files\Mozilla Firefox\'
+  exe: 'C:\Program Files\Mozilla Firefox\firefox.exe'
+  sub_repo: utilities-software
+  folder_repo: windows

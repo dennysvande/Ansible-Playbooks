@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\group_vars",
+    "\\roles",
+    "\\roles\\windows",
+    "\\roles\\windows\\common",
+    "\\roles\\windows\\common\\chrome\\tasks",
+    "\\roles\\windows\\common\\disable-lm-ntlmv1",
+    "\\roles\\windows\\common\\disable-lm-ntlmv1\\tasks",
+    "\\roles\\windows\\common\\disable-old-tls",
+    "\\roles\\windows\\common\\disable-old-tls\\tasks"
+  ],
+  "SelectedNode": "\\roles\\windows\\common\\disable-old-tls\\tasks\\main.yml",
+  "PreviewInSolutionExplorer": false
+}

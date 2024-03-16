@@ -1,0 +1,17 @@
+---
+# Main file for removing variable from $PATH
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Remove variables from the global system path, and in the specified order
+  win_path:
+    elements:
+    - 'C:\3rdparty\7zip'
+    - 'C:\3rdparty\notepad++'
+    - 'D:\3rdparty\7zip'
+    - 'D:\3rdparty\notepad++'
+    - 'D:\3rdParty\Corretto\jdk11.0.19_7\bin'
+    - 'D:\3rdParty\Corretto\jdk11.0.19_7\bin\server'
+    - 'D:\3rdparty\Coretto\jdk11.0.21_9\bin'
+    - 'D:\3rdparty\Coretto\jdk11.0.21_9\bin\server'
+    state: absent
+  ignore_errors: True

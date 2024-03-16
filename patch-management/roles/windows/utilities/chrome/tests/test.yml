@@ -1,0 +1,6 @@
+---
+
+- hosts: '{{ansible_play_hosts}}'
+
+  roles:
+    - roles/windows/chrome

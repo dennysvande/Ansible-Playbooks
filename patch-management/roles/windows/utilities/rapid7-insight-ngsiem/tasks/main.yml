@@ -1,0 +1,21 @@
+---
+# Main file for roles/windows/rapid-ngsiem
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy NGSIEM
+  win_copy:
+    src: '/opt/updates/windows_Insight_Agent.zip'
+    dest: 'C:\\temp\\windows_Insight_Agent.zip'
+
+- name: Unzip Insight Agent
+  win_unzip:
+    src: 'C:\\Temp\\windows_Insight_Agent.zip'
+    dest: 'C:\\Temp\\windows_Insight_Agent'
+    #recurse: yes
+    #delete_archive: yes
+
+- name: Install NGSIEM
+  win_package:
+    path: 'C:\\temp\\windows_Insight_Agent\\agentInstaller-x86_64.msi'
+    state: present
+    arguments: /quiet /log "C:\logs\ngsiem-insight-agent.log PROJECTLOCATION=D:\Rapid7\"

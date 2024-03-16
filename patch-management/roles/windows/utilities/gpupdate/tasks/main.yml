@@ -1,0 +1,14 @@
+---
+# Main file for roles/windows/gpupdate
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Force group policy update
+  win_shell: 'gpupdate /force'
+
+#- name: Force group policy update
+#  win_command: 'gpupdate /force'
+#  become: yes
+#  become_method: runas
+#  vars:
+#    ansible_become_user: 'ot\svc_viper'
+#    ansible_become_pass: 'MECO_Admin@2023'

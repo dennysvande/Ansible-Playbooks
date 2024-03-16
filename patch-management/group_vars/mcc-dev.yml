@@ -1,0 +1,18 @@
+ansible_user: 'xxx_administrator'
+ansible_password: 'MECO_Admin@2023L'
+ansible_port: 5985
+ansible_connection: winrm
+ansible_winrm_transport: basic
+ansible_winrm_cert_validation: ignore
+
+#ansible_user: 'xxx_administrator'
+#ansible_password: 'MECO_Admin@2023L'
+#ansible_port: 5985
+#ansible_connection: winrm
+#ansible_winrm_transport: ntlm
+
+#ansible_user: 'habinstall@OT.PDS'
+#ansible_password: 'MECO_Admin@2023'
+#ansible_port: 5985
+#ansible_connection: winrm
+#ansible_winrm_transport: kerberos

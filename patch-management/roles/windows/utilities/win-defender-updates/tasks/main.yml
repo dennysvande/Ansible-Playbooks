@@ -1,0 +1,11 @@
+---
+# Main file for Windefender definition
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Copy Windefender definition
+  win_copy:
+    src: '/opt/Updates/mpam-fe.exe'
+    dest: 'C:\\temp\\mpam-fe.exe'
+
+- name: Install windefender definition
+  win_shell: 'C:\\temp\\mpam-fe.exe'

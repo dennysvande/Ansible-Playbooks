@@ -1,0 +1,39 @@
+---
+# Main file for Wireshark
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+# - name: Copy wireshark
+#   win_copy:
+#     src: '/opt/updates/Wireshark-4.2.0-x64.exe'
+#     dest: 'C:\\temp\\Wireshark-4.2.0-x64.exe'
+
+# - name: Copy npcap
+#   win_copy:
+#     src: '/opt/updates/npcap-1.78.exe'
+#     dest: 'C:\\temp\\npcap-1.78.exe'
+
+- name: Download wireshark:
+  win_get_url:
+    url: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/wireshark/Wireshark-4.2.3-x64.exe'
+    url_username: 'admin'
+    url_password: 'MECO_Admin@2023'
+    dest: 'C:\\temp\\Wireshark-4.2.0-x64.exe'
+
+- name: Download npcap
+  win_get_url:
+    url: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/wireshark/npcap-1.78.exe'
+    url_username: 'admin'
+    url_password: 'MECO_Admin@2023'
+    dest: 'C:\\temp\\npcap-1.78.exe'
+
+#- name: install wireshark
+  #win_package:
+    #path: 'C:\\temp\\Wireshark-4.2.0-x64.exe'
+    #state: present
+    #arguments: /NCRC /S /desktopicon=yes /quicklaunchicon=no /D=D:\3rdparty\Wireshark
+
+#- name: install npcap
+  #win_package:
+    #path: 'C:\\temp\\npcap-1.78.exe'
+    #state: present
+    #arguments: /S /D=D:\3rdparty\npcap

@@ -1,0 +1,11 @@
+---
+# Main file for roles/windows/intel-chipset
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy Intel chipset setup
+  win_copy:
+    src: '/opt/updates/SetupChipset.exe'
+    dest: 'C:\\temp\\SetupChipset.exe'
+
+- name: Install Intel chipset
+  win_shell: 'C:\\temp\\SetupChipset.exe -s -norestart' 

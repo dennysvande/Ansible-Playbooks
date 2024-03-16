@@ -1,0 +1,43 @@
+---
+- name: Ansible playbook for patching management
+  hosts: foundation-linux
+  gather_facts: false
+
+  #tasks:
+
+  roles:
+    #- ./roles/windows/common/remove-variable-path
+    #- ./roles/windows/common/remove-misplace-folder
+    #- ./roles/windows/common/temp-dir
+    #- ./roles/windows/common/edge
+    #- ./roles/windows/common/chrome
+    #- ./roles/windows/common/7zip
+    #- ./roles/windows/common/winmerge
+    #- ./roles/windows/common/notepad++
+    #- ./roles/windows/common/intel-chipset
+    #- ./roles/windows/common/adobe-reader
+    #- ./roles/windows/common/vcredist-2013
+    #- ./roles/windows/common/vcredist-2022
+    #- ./roles/windows/common/strawberry-perl
+    #- ./roles/windows/common/amazon-coretto
+    #- ./roles/windows/common/aspnetcore-runtime
+    #- ./roles/windows/common/dotnet-runtime
+    #- ./roles/windows/common/net-framework
+    #- ./roles/windows/common/git
+    #- ./roles/windows/common/tortoise-git
+    #- ./roles/windows/common/soapui
+    #- ./roles/windows/common/postman
+    #- ./roles/windows/common/vmtools
+    #- ./roles/windows/common/wireshark
+    #- ./roles/windows/common/change-dir-owner
+    #- ./roles/windows/common/copy-curl
+    #- ./roles/windows/common/win-security-updates
+    #- ./roles/windows/common/win-defender-updates
+    #- ./roles/windows/common/disable-lm-ntlmv1
+    #- ./roles/windows/common/disable-old-tls
+    #- ./roles/windows/common/remove-temp-folder
+    #- ./roles/windows/common/gpupdate
+    #- ./roles/windows/common/winverifytrust-fix
+    #- ./roles/windows/common/sweet32-fix
+    #- ./roles/linux/disable-weak-ssh
+    - ./roles/linux/update-installed-packages

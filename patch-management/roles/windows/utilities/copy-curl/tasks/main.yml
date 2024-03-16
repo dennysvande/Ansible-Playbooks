@@ -1,0 +1,29 @@
+---
+# Main file for Curl
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Backup original curl
+  win_copy:
+    src: 'C:\\Windows\\System32\\curl.exe'
+    dest: 'C:\\Windows\\System32\\curl.exe.bak'
+    remote_src: true
+
+# - name: Copy Curl
+#   win_copy:
+#     src: '/opt/updates/curl-8.2.0_1-win64-mingw/bin/curl.exe'
+#     dest: 'C:\\Windows\\System32\\curl.exe'
+
+- name: Download latest curl
+  win_get_url:
+    url: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/curl/curl.exe'
+    url_username: 'admin'
+    url_password: 'MECO_Admin@2023'
+    dest: 'C:\\Windows\\System32\\curl.exe'
+
+#- name: Move Curl to System32
+  #win_command: 'xcopy C:\temp\curl.exe C:\Windows\System32\Curl.exe /K /H /Y'
+  #become: yes
+  #become_method: runas
+  #vars:
+    #ansible_become_user: 'administrator'
+    #ansible_become_pass: 'Passw0rd!'

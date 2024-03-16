@@ -1,0 +1,18 @@
+---
+# Main file for roles/windows/sweet32 fix
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+# Fix sweet32 vuln
+- name: Add Triple DES registry
+  win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168
+    name: Enabled
+    data: 0
+    type: dword
+
+- name: Add DES 56 registry
+  win_regedit:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES 56/56
+    name: Enabled
+    data: 0
+    type: dword

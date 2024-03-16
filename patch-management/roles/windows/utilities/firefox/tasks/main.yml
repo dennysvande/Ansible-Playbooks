@@ -1,0 +1,6 @@
+---
+# Main file for roles/windows/uninstall-firefox
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Uninstall firefox
+  win_command: '"C:\Program Files\Mozilla Firefox\uninstall\helper.exe" /S'

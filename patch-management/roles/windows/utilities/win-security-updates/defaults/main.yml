@@ -1,0 +1,9 @@
+---
+# defaults file for vmware-tools
+# Here is to specific vars for the role.
+
+app:
+  name: vmtools
+  install_path: "C:\\Program Files\\VMware\\VMware Tools\\vmtoolsd.exe"  
+  sub_repo: utilities-software
+  folder_repo: windows

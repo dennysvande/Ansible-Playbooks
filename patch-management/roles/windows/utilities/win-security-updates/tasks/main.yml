@@ -1,0 +1,19 @@
+---
+# Main file for Windows KB
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Copy Win KB
+  ansible.windows.win_copy:
+    src: '/opt/Updates/windows10.0-kb5022554-x64_a4abb49dda1c095d655f6161616e11a2f9705afa.msu'
+    dest: 'C:\\temp\\windows10.0-kb5022554-x64_a4abb49dda1c095d655f6161616e11a2f9705afa.msu'
+
+- name: Install hotfix
+  ansible.windows.win_hotfix:
+    hotfix_kb: KB5022554
+    source: 'C:\\temp\\windows10.0-kb5022554-x64_a4abb49dda1c095d655f6161616e11a2f9705afa.msu'
+    state: present
+  register: hotfix_install
+
+- name: Reboot the server after hotfix installation
+  ansible.windows.win_reboot:
+  when: hotfix_install.reboot_required

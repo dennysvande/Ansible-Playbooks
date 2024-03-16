@@ -1,0 +1,14 @@
+---
+# Main file for roles/windows/checkpoint-harmony
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy EPP
+  win_copy:
+    src: '/opt/updates/ADMS2.0_ITOnPrem_V86.70.msi'
+    dest: 'C:\\temp\\ADMS2.0_ITOnPrem_V86.70.msi'
+
+- name: Install EPP
+  win_package:
+    path: 'C:\\temp\\ADMS2.0_ITOnPrem_V86.70.msi'
+    state: present
+    arguments: /norestart /log "C:\logs\checkpoint_e86.70_install.log" /qn SILENTINSTALL=1 UNINST_PASSWORD="MECO_Admin@2023"

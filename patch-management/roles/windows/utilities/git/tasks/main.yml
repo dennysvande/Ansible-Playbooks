@@ -1,0 +1,29 @@
+---
+# Main file for roles/windows/git
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+# This is because |basename or filters in general don't work with galaxy
+
+# - name: Copy git
+#   win_copy:
+#     src: '/opt/updates/Git-2.43.0-64-bit.exe'
+#     dest: 'C:\\temp\\Git-2.43.0-64-bit.exe'
+
+# - name: Copy git installation settings file
+#   win_copy:
+#     src: '/opt/updates/git-installation-settings.log'
+#     dest: 'C:\\temp\\git-installation-settings.log'
+
+- name: Download git installation settings file
+  win_get_url:
+    url: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/git/git-installation-settings.log'
+    url_username: 'admin'
+    url_password: 'MECO_Admin@2023'
+    dest: 'C:\\temp\\git-installation-settings.log'
+
+- name: Install git
+  win_package:
+    path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/git/Git-2.43.0-64-bit.exe'
+    url_username: 'admin'
+    url_password: 'MECO_Admin@2023'
+    state: present
+    arguments: /SILENT /LOADINF="C:\temp\git-installation-settings.log"

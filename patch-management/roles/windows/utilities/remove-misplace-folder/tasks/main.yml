@@ -1,0 +1,21 @@
+---
+# Main file for misplace folder
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Remove misplace folder
+  ansible.windows.win_file:
+    path: C:\3rdparty
+    state: absent
+  ignore_errors: True
+
+- name: Remove misplace coretto-latest folder
+  ansible.windows.win_file:
+    path: D:\3rdParty\Coretto
+    state: absent
+  ignore_errors: True
+
+- name: Remove misplace coretto-older folder
+  ansible.windows.win_file:
+    path: D:\3rdParty\Corretto
+    state: absent
+  ignore_errors: True

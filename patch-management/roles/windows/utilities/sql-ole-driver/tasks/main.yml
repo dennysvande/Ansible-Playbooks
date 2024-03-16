@@ -1,0 +1,14 @@
+---
+# Main file for roles/windows/sql-ole
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy sql ole driver
+  win_copy:
+    src: '/opt/updates/msoledbsql.msi'
+    dest: 'C:\\temp\\msoledbsql.msi'
+
+- name: Install sql ole driver
+  win_package: 
+    path: 'C:\\temp\\msoledbsql.msi'
+    state: present
+    arguments: /qn /L*v "C:\logs\msoledbsql.log" IACCEPTMSOLEDBSQLLICENSETERMS=YES

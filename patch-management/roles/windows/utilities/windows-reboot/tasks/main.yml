@@ -1,0 +1,6 @@
+---
+# Main file for roles/windows/windows-reboot
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Reboot the machine with all defaults
+  ansible.windows.win_reboot:

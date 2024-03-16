@@ -1,0 +1,31 @@
+---
+# Main file for roles/linux/disable-weak-ssh
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy updated sshd config file
+  ansible.builtin.copy:
+    src: /opt/updates/sshd
+    dest: /etc/sysconfig/sshd
+    owner: root
+    group: root
+    mode: '0640'
+  ignore_errors: True
+
+- name: Copy updated ssh config file
+  ansible.builtin.copy:
+    src: /opt/updates/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: '0600'
+  ignore_errors: True
+
+- name: verify configuration file berfore starting
+  ansible.builtin.shell: sshd -t
+  ignore_errors: True
+
+- name: restart sshd service
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
+  ignore_errors: True

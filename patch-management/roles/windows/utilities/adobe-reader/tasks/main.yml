@@ -1,0 +1,19 @@
+---
+# Main file for roles/windows/Adobe Reader
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+#- name: Copy Adobe Reader
+#  win_copy:
+#    src: '/opt/updates/AcroRdrDC2300820421_en_US.exe'
+#    dest: 'C:\\temp\\AcroRdrDC2300820421_en_US.exe'
+
+- name: Uninstall Adobe Reader
+  win_package:
+    product_id: '{AC76BA86-1033-1033-7760-BC15014EA700}'
+    state: absent
+
+- name: Install Adobe Reader
+  win_package: 
+    path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/adobe-reader/AcroRdrDC2300820533_en_US.exe'
+    state: present
+    arguments: /sAll /rs /rps /l*v "C:\logs\adobe_reader_install.log" /msi INSTALLDIR="D:\3rdparty\Adobe Reader" TARGETDIR="D:\3rdparty\Adobe Reader"

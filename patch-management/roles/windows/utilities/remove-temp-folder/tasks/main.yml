@@ -1,0 +1,8 @@
+---
+# Main file for removing temp folder
+# Generally speaking this shouldn't be changed at all, it should just work!
+
+- name: Remove C:\Temp
+  ansible.windows.win_file:
+    path: C:\Temp
+    state: absent

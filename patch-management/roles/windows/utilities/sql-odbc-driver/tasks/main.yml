@@ -1,0 +1,14 @@
+---
+# Main file for roles/windows/sql-odbc
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Copy sql odbc driver
+  win_copy:
+    src: '/opt/updates/msodbcsql.msi'
+    dest: 'C:\\temp\\msodbcsql.msi'
+
+- name: Install sql odbc driver
+  win_package: 
+    path: 'C:\\temp\\msodbcsql.msi'
+    state: present
+    arguments: /qn /L*v "C:\logs\msodbcsql.log" /qb IACCEPTMSODBCSQLLICENSETERMS=YES

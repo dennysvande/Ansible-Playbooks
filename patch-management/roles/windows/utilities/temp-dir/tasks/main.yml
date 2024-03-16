@@ -1,0 +1,14 @@
+---
+# Main file for roles/windows/firefox
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+# This is because |basename or filters in general don't work with galaxy
+
+- name: Create temp directory to store latest version software
+  win_file:
+    path: 'C:\\temp'
+    state: directory
+
+- name: Create logs directory to store installation log
+  win_file:
+    path: 'C:\\logs'
+    state: directory

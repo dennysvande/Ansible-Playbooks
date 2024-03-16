@@ -1,0 +1,45 @@
+---
+# Main file for roles/linux/update-repos
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Create rheldvd repo folder
+  ansible.builtin.shell: mkdir /media/rheldvd
+  ignore_errors: True
+
+- name: Mount installation iso to folder
+  ansible.builtin.shell: mount /dev/sr0 /media/rheldvd
+  ignore_errors: True
+
+- name: Create rpms temp folder
+  ansible.builtin.shell: mkdir /tmp/rpms
+  ignore_errors: True
+
+- name: Copy rhel repo config file
+  ansible.builtin.copy:
+    src: /opt/rhel8dvd.repo
+    dest: /etc/yum.repos.d/rhel8dvd.repo
+    owner: root
+    group: root
+    mode: '0644'
+  ignore_errors: True
+
+- name: Remove old rhel repo config file
+  ansible.builtin.shell: rm /etc/yum.repos.d/my.repo
+  ignore_errors: True
+
+- name: Copy updated packages file
+  ansible.builtin.copy:
+    src: /opt/updates/rpm-updates.tar.bz2
+    dest: /opt/rpm-updates.tar.bz2
+    owner: root
+    group: root
+    mode: '0644'
+  ignore_errors: True
+
+- name: Extract update packages
+  ansible.builtin.shell: tar xf /opt/rpm-updates.tar.bz2 -C /tmp/rpms/
+  ignore_errors: True
+
+- name: Upgrade/update installed packages
+  ansible.builtin.shell: yum localinstall /tmp/rpms/tmp/rpm_db/*.rpm -y
+  ignore_errors: True

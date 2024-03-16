@@ -1,0 +1,20 @@
+---
+# Main file for roles/windows/join-domain
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Join Domain
+  ansible.windows.win_domain_membership:
+    dns_domain_name: ot.net
+    hostname: {{ "ansible_hostname" }}
+    domain_admin_user: svc_viper@ot.net
+    domain_admin_password: MECO_Admin@2023
+    domain_ou_path: "OU=MCC,OU=General,OU=Clients,OU=Eterra_Computers,OU=Eterra,DC=ot,DC=net"
+    log_path: C:\Temp\ad_join_log.txt
+    state: domain
+  register: domain_state
+
+#-name: Reboot after join
+  #ansible.windows.win_reboot:
+  #when: domain_state.reboot_required
+
+#CN=UIG02MCC,OU=MCC,OU=General,OU=Clients,OU=Eterra_Computers,OU=Eterra,DC=ot,DC=net

@@ -1,0 +1,11 @@
+---
+# Main file for roles/windows/set-dns-address
+# Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
+
+- name: Set multiple lookup addresses on all visible adapters (usually physical adapters that are in the Up state), with debug logging to a file
+  ansible.windows.win_dns_client:
+    adapter_names: '*'
+    dns_servers:
+    - 10.110.130.19
+    - 10.110.130.20
+    log_path: C:\logs\dns_log.txt
