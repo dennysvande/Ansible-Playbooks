@@ -3,11 +3,6 @@
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 # This is because |basename or filters in general don't work with galaxy
 
-#- name: Copy Amazon Coretto
-#  win_copy:
-#    src: '/opt/updates/amazon-corretto-11.0.21.9.1-windows-x64-jdk.zip'
-#    dest: 'C:\\temp\\amazon-corretto-11.0.21.9.1-windows-x64-jdk.zip'
-
 - name: Download Amazon Coretto
   win_get_url:
     url: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/amazon-coretto-jdk/amazon-corretto-11.0.21.9.1-windows-x64-jdk.zip'

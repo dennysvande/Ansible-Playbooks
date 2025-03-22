@@ -2,14 +2,6 @@
 # Main file for roles/windows/notepad++
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-# - name: Copy notepad++
-#   win_copy:
-#     src: '/opt/updates/npp.8.6.Installer.x64.exe'
-#     dest: 'C:\temp\npp.8.6.Installer.x64.exe'
-
-#- name: Install notepad++
-  #win_shell: 'C:\Temp\npp.8.6.Installer.x64.exe /S /D=C:\3rdparty\notepad++'
-
 - name: Install notepad++
   win_package: 
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/notepad%2B%2B/npp.8.6.Installer.x64.exe'

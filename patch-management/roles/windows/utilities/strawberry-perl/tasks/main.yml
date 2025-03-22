@@ -3,11 +3,6 @@
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 # This is because |basename or filters in general don't work with galaxy
 
-# - name: Copy Strawberry Perl
-#   win_copy:
-#     src: '/opt/updates/strawberry-perl-5.38.0.1-64bit.msi'
-#     dest: 'C:\\temp\\strawberry-perl-5.38.0.1-64bit.msi'
-
 - name: Uninstall Strawberry Perl
   win_package:
     product_id: '{2DC518D0-750A-1014-A07D-5301D6FAD9F8}'

@@ -2,11 +2,6 @@
 # Main file for roles/windows/SoapUI
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-# - name: Copy SoapUI
-#   win_copy:
-#     src: '/opt/updates/SoapUI-x64-5.7.2.exe'
-#     dest: 'C:\\temp\\SoapUI-x64-5.7.2.exe'
-
 - name: Install SoapUI
   win_package: 
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/soapui/SoapUI-x64-5.7.2.exe'

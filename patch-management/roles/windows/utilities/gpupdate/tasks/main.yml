@@ -10,5 +10,5 @@
 #  become: yes
 #  become_method: runas
 #  vars:
-#    ansible_become_user: 'ot\svc_viper'
-#    ansible_become_pass: 'MECO_Admin@2023'
+#    ansible_become_user: ''
+#    ansible_become_pass: ''

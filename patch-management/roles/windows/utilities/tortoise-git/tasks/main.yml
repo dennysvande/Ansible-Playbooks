@@ -3,10 +3,6 @@
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 # This is because |basename or filters in general don't work with galaxy
 
-# - name: Copy tortoise git 
-#   win_copy:
-#     src: '/opt/updates/TortoiseGit-2.15.0.0-64bit.msi'
-#     dest: 'C:\\temp\\TortoiseGit-2.15.0.0-64bit.msi'
 
 - name: Install tortoise git 
   win_package:

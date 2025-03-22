@@ -2,15 +2,6 @@
 # Main file for Wireshark
 # Generally speaking this shouldn't be changed at all, it should just work!
 
-# - name: Copy wireshark
-#   win_copy:
-#     src: '/opt/updates/Wireshark-4.2.0-x64.exe'
-#     dest: 'C:\\temp\\Wireshark-4.2.0-x64.exe'
-
-# - name: Copy npcap
-#   win_copy:
-#     src: '/opt/updates/npcap-1.78.exe'
-#     dest: 'C:\\temp\\npcap-1.78.exe'
 
 - name: Download wireshark:
   win_get_url:

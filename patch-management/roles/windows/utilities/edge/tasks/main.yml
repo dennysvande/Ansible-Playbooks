@@ -3,11 +3,6 @@
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 # This is because |basename or filters in general don't work with galaxy
 
-# - name: Copy Edge
-#   win_copy:
-#     src: '/opt/updates/MicrosoftEdgeEnterpriseX64.msi'
-#     dest: 'C:\\temp\\MicrosoftEdgeEnterpriseX64.msi'
-
 - name: Install edge
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/edge/MicrosoftEdgeEnterpriseX64.msi'

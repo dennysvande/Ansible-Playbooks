@@ -2,11 +2,6 @@
 # Main file for roles/windows/dotnet-runtime
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-# - name: Copy dotnet-runtime
-#   win_copy:
-#     src: '/opt/updates/dotnet-runtime-6.0.25-win-x64.exe'
-#     dest: 'C:\\temp\\dotnet-runtime-6.0.25-win-x64.exe'
-
 - name: Install dotnet-runtime
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/dotnet-framework/dotnet-runtime-6.0.27-win-x64.exe'

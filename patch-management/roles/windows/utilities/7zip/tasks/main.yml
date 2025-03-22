@@ -2,11 +2,6 @@
 # Main file for 7zip
 # Generally speaking this shouldn't be changed at all, it should just work!
 
-#- name: Copy 7zip
-#  win_copy:
-#    src: '/opt/updates/7z2301-x64.exe'
-#    dest: 'C:\\temp\\7z2301-x64.exe'
-
 - name: install 7zip
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/7zip/7z2401-x64.exe'

@@ -2,11 +2,6 @@
 # Main file for roles/windows/Adobe Reader
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-#- name: Copy Adobe Reader
-#  win_copy:
-#    src: '/opt/updates/AcroRdrDC2300820421_en_US.exe'
-#    dest: 'C:\\temp\\AcroRdrDC2300820421_en_US.exe'
-
 - name: Uninstall Adobe Reader
   win_package:
     product_id: '{AC76BA86-1033-1033-7760-BC15014EA700}'

@@ -7,14 +7,14 @@
   win_regedit:
     path: HKLM:\Software\Microsoft\Policies\Microsoft\Windows\WindowsUpdate
     name: WUServer
-    data: http://vwpcwp01mcc.ot.net:8530
+    data: 
     type: string
 
 - name: Add WUStatusServer Location
   win_regedit:
     path: HKLM:\Software\Microsoft\Policies\Microsoft\Windows\WindowsUpdate
     name: WUStatusServer
-    data: http://vwpcwp01mcc.ot.net:8530
+    data: 
     type: string
 
 - name: Add WUStatusServer Location

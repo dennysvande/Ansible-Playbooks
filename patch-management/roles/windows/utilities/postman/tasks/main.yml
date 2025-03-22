@@ -2,10 +2,6 @@
 # Main file for roles/windows/Postman
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-# - name: Copy Postman
-#   win_copy:
-#     src: '/opt/updates/Postman-win64-Setup.exe'
-#     dest: 'C:\\temp\\Postman-win64-Setup.exe'
 
 - name: Download Postman
   win_get_url:

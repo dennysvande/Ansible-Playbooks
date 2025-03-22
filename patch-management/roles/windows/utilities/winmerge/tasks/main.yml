@@ -2,11 +2,6 @@
 # Main file for winmerge
 # Generally speaking this shouldn't be changed at all, it should just work!
 
-# - name: Copy winmerge
-#   win_copy:
-#     src: '/opt/updates/WinMerge-2.16.32-x64-Setup.exe'
-#     dest: 'C:\\temp\\WinMerge-2.16.32-x64-Setup.exe'
-
 - name: install winmerge
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/winmerge/WinMerge-2.16.32-x64-Setup.exe'

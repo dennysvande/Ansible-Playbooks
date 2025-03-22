@@ -2,11 +2,6 @@
 # Main file for roles/windows/vcredist 2013
 # Generally speaking this shouldn't be changed, excepr for the 'application'. Replace it with the name of application defined in playbook
 
-# - name: Copy vcredist 2013
-#   win_copy:
-#     src: '/opt/updates/vcredist_x64_2013.exe'
-#     dest: 'C:\\temp\\vcredist_x64_2013.exe'
-
 - name: Install vcredist 2013
   win_package:
     path: 'http://10.110.133.20:8082/artifactory/utilities-software/windows/vcredist/vcredist_x64_2013.exe'
